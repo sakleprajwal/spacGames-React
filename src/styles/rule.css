@@ -1,0 +1,30 @@
+.quiz-rule-section{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 98%;
+    max-width: 44rem;
+    margin: auto;
+    padding: 1rem;
+}
+
+.quiz-rule-title{
+    color: var(--secondary-color);
+    font-family: var(--primary-font);
+}
+
+.rule-list-container{
+    margin: 1rem 0;
+    color: var(--secondary-color);
+    font-family: var(--ternary-font);
+}
+
+ol.rule-list{
+    list-style-type: decimal;
+    list-style-position: outside;
+}
+
+.rule-item{
+    margin: 0.4rem 0;
+    font-size: 1.2rem;
+}

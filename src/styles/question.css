@@ -1,0 +1,100 @@
+.quiz-question-section, .result-section{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 98%;
+    width: 40rem;
+}
+
+.question-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 1px 3px var(--secondary-color-opaque), 0 1px 2px var(--secondary-color-opaque);
+    background-color: var(--primary-shadow-color);
+    margin-top: 2rem;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.question-title{
+    color: var(--secondary-color);
+    font-family: var(--ternary-font);
+    margin: 1rem 0;
+}
+
+.question-text{
+    color: var(--secondary-color);
+    font-family: var(--secondary-font);
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+.options-section{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 1rem;
+    margin-top: 1rem;
+}
+
+.option-btn{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-family: var(--ternary-font);
+    padding: 1rem;
+    font-size: 1rem;
+    border: none;
+    text-align: start;
+    border-radius: 1rem;
+}
+
+.option-btn:hover{
+    color: var(--secondary-shadow-color);
+    cursor: pointer;
+}
+
+.quiz-btn a{
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+.quiz-question-section .option1:focus{
+    background-color: #F6511D;
+}
+
+.quiz-question-section .option2:focus{
+    background-color: #F6511D;
+}
+
+.quiz-question-section .option3:focus{
+    background-color: #7FB800;
+}
+
+.quiz-question-section .option4:focus{
+    background-color: #F6511D;
+}
+
+.quiz-navigation{
+    display: flex;
+    justify-content: space-between;
+}
+
+.quiz-btn{
+    background-color: var(--primary-shadow-color);
+    color: var(--secondary-color);
+    font-family: var(--ternary-font);
+    padding: 1rem;
+    margin: 1rem;
+    font-size: 1.2rem;
+    border: none;
+    text-align: center;
+    border-radius: 1rem;
+    width: 100%;
+}
+
+.quiz-btn .far{
+    font-size: 1.2rem;
+    margin: 0 1rem;
+}
