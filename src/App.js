@@ -1,15 +1,14 @@
-import Home from './pages/Home/Home';
-import Question from './pages/Question/Question';
-import Result from './pages/Result/Result';
-import Rule from './pages/Rule/Rule';
+import { BrowserRouter } from 'react-router-dom';
+import Navbar from './components/Navbar/Navbar';
+import Router from "./routes/Router";
 
 function App() {
   return (
     <div>
-      <Home/>
-      <Question/>
-      <Result/>
-      <Rule/>
+      <BrowserRouter>
+        <Navbar/>
+				<Router/>
+      </BrowserRouter>
     </div>
   );
 }
