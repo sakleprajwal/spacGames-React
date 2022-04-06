@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { v4 as uuid } from "uuid";
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import "../../styles/base.css"
@@ -8,29 +7,35 @@ const Question = () => {
     const [questionObjs, setQuestionObjs] = useState([])
 
     const fetchQuestions = async () => {
-        const { data } = await axios.get("https://opentdb.com/api.php?amount=5&category=17&difficulty=easy&type=multiple");
-        const data1 = data.results.map((item, index) => {
-            return {
-                id: index+1,
-                question: item.question,
-                options: [...item.incorrect_answers, item.correct_answer],
-                correctAnswer: item.correct_answer,
-                selectedAnswer: "",
-                score: 0,
-            }
-        })
-        setQuestionObjs(data1);
+        try{
+            const { data } = await axios.get("https://opentdb.com/api.php?amount=5&category=17&difficulty=easy&type=multiple");
+            const data1 = data.results.map((item, index) => {
+                return {
+                    id: index+1,
+                    question: item.question,
+                    options: [...item.incorrect_answers, item.correct_answer],
+                    correctAnswer: item.correct_answer,
+                    selectedAnswer: "",
+                    score: 0,
+                }
+            })
+            setQuestionObjs(data1);
+        }
+        catch(err){
+            console.log(err)
+        }
     }
 
     const optionClickHandler = (questionId, selectedOption) => {
-        questionObjs.map(questionObj => {
+        questionObjs.forEach(questionObj => {
             if(questionObj.id === questionId){
                 questionObj.selectedAnswer = selectedOption;
                 console.log(questionObj.correctAnswer)
             }
-            
         })
     }
+
+
 
     useEffect(() => {
         fetchQuestions();
@@ -51,8 +56,8 @@ const Question = () => {
                         </div>
                         <div className="options-section">
                             {
-                                questionObj.options.map(option =>
-                                    <button key={option} onClick={() => optionClickHandler(questionObj.id, option)} className="option-btn option1">{option}</button>
+                                questionObj.options.map((option, index) =>
+                                    <button key={index} onClick={() => optionClickHandler(questionObj.id, option)} className="option-btn option1">{option}</button>
                                     )
                             }
                         </div>
